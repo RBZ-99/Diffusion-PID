@@ -1,76 +1,294 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DiffusionPID: Interpreting Diffusion via Partial Information Decomposition</title>
-    <style>
-        body {
-            font-family: 'Georgia', serif;
-            line-height: 1.8;
-            background-color: #f9f9f9;
-            color: #333;
-            margin: 0;
-            padding: 40px;
-            max-width: 100%;
-        }
-        h1 {
-            text-align: center;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            color: #2c3e50;
-        }
-        .authors {
-            text-align: center;
-            font-size: 1.1em;
-            color: #7f8c8d;
-            margin-bottom: 40px;
-        }
-        .abstract {
-            font-size: 1.15em;
-            max-width: 800px;
-            margin: 0 auto 60px auto;
-            text-align: justify;
-            padding-left: 20px;
-            padding-right: 20px;
-        }
-        .abstract h2 {
-            font-size: 1.6em;
-            margin-bottom: 20px;
-            color: #34495e;
-        }
-        .image-container {
-            max-width: 800px;
-            margin: 0 auto 50px auto;
-            text-align: center;
-        }
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-        .caption {
-            font-size: 0.9em;
-            color: #7f8c8d;
-            margin-top: 10px;
-            text-align: center;
-        }
-    </style>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="assets/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+
+  <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+  <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="assets/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>DiffusionPID</title>
+  <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="assets/css/bulma.min.css">
+  <link rel="stylesheet" href="assets/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="assets/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="assets/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="assets/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="assets/js/fontawesome.all.min.js"></script>
+  <script src="assets/js/bulma-carousel.min.js"></script>
+  <script src="assets/js/bulma-slider.min.js"></script>
+  <script src="assets/js/index.js"></script>
 </head>
 <body>
-    <h1>DiffusionPID: Interpreting Diffusion via Partial Information Decomposition</h1>
-    <div class="authors">
-        <p>Shaurya Dewan*, Rushikesh Zawar*, Prakanshul Saxena*, Yingshan Chang, Andrew Luo, Yonatan Bisk</p>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">DiffusionPID: Interpreting Diffusion via Partial Information Decomposition</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://srdewan.github.io/" target="_blank">Shaurya Dewan</a><sup>*</sup>,</span>
+                <span class="author-block">
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Rushikesh Zawar</a><sup>*</sup>,</span>
+                  <span class="author-block">
+                    <a href="https://www.linkedin.com/in/prakanshul-saxena-a21b20190/" target="_blank">Prakanshul Saxena</a><sup>*</sup>,
+                  </span>
+                  <span class="author-block">
+                    <a href="https://zdxdsw.github.io/" target="_blank">Yingshan Chang</a>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://www.cs.cmu.edu/~afluo/" target="_blank">Andrew Luo</a>
+                  </span>
+                  <span class="author-block">
+                    <a href="https://talkingtorobots.com/yonatanbisk.html" target="_blank">Yonatan Bisk</a>
+                  </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">Carnegie Mellon University<br><b>NeurIPS 2024</b></span>
+                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2406.05191" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+
+                <!-- ArXiv abstract Link -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2406.05191" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="abstract">
-        <h2>Abstract</h2>
-        <p>
-            Text-to-image diffusion models have made significant progress in generating naturalistic images from textual inputs, and demonstrate the capacity to learn and represent complex visual-semantic relationships. While these diffusion models have achieved remarkable success, the underlying mechanisms driving their performance are not yet fully accounted for, with many unanswered questions surrounding what they learn, how they represent visual-semantic relationships, and why they sometimes fail to generalize. Our work presents Diffusion Partial Information Decomposition (DiffusionPID), a novel technique that applies information-theoretic principles to decompose the input text prompt into its elementary components, enabling a detailed examination of how individual tokens and their interactions shape the generated image. We introduce a formal approach to analyze the uniqueness, redundancy, and synergy terms by applying PID to the denoising model at both the image and pixel level. This approach enables us to characterize how individual tokens and their interactions affect the model output. We first present a fine-grained analysis of characteristics utilized by the model to uniquely localize specific concepts, we then apply our approach in bias analysis and show it can recover gender and ethnicity biases. Finally, we use our method to visually characterize word ambiguity and similarity from the model's perspective and illustrate the efficacy of our method for prompt intervention. Our results show that PID is a potent tool for evaluating and diagnosing text-to-image diffusion models.
-        </p>
+  </div>
+</section>
+
+
+<!-- Teaser image -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="assets/images/teaser.png" alt="Teaser"/>
+      <h2 class="subtitle has-text-centered">
+        Our "baseball" uniqueness map specifically highlights the seam region of the tennis ball as it is visually very similar to that of a baseball, 
+        <b>Center:</b> We see a high synergy for "bat" with "baseball" and "overhead" respectively which shows that it uses these contextual cues to 
+        generate the images in the right settings, <b>Right:</b> Our redundancy map between "queen" and "crown" correctly focuses on the crown and 
+        facial region.
+      </h2>
     </div>
-    <div class="image-container">
-        <img src="image-url-here.jpg" alt="Description of the image">
-        <div class="caption">Figure 1: Caption describing the image.</div>
+  </div>
+</section>
+<!-- End teaser image -->
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+    <b>TL;DR:</b> We introduce a novel approach that leverages partial information decomposition (PID), from information theory, to interpret the 
+    diffusion process and uncover the contributions of individual words and their interactions to the generated image. 
     </div>
-</body>
-</html>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Text-to-image diffusion models have made significant progress in generating naturalistic images from textual inputs, and demonstrate the capacity to learn 
+            and represent complex visual-semantic relationships. While these diffusion models have achieved remarkable success, the underlying mechanisms driving 
+            their performance are not yet fully accounted for, with many unanswered questions surrounding what they learn, how they represent visual-semantic 
+            relationships, and why they sometimes fail to generalize. Our work presents Diffusion <b>P</b>artial <b>I</b>nformation <b>D</b>ecomposition (DiffusionPID), a novel 
+            technique that applies information-theoretic principles to decompose the input text prompt into its elementary components, enabling a detailed 
+            examination of how individual tokens and their interactions shape the generated image. We introduce a formal approach to analyze the uniqueness, 
+            redundancy, and synergy terms by applying PID to the denoising model at both the image and pixel level. This approach enables us to characterize 
+            how individual tokens and their interactions affect the model output. We first present a fine-grained analysis of characteristics utilized by the 
+            model to uniquely localize specific concepts, we then apply our approach in bias analysis and show it can recover gender and ethnicity biases. Finally, 
+            we use our method to visually characterize word ambiguity and similarity from the model’s perspective and illustrate the efficacy of our method for prompt 
+            intervention. Our results show that PID is a potent tool for evaluating and diagnosing text-to-image diffusion models. (We share the code in the supplemental 
+            and will release it publicly.)
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Image carousel -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Results</h2>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="assets/images/homonym_explain.png" alt="Homonyms Explanation"/>
+        <h2 class="subtitle has-text-centered">
+          Homonyms. We see that the word "baseball" provides the required synergistic context with the homonym "bat" to pick the 
+          sports setting over the animal. This effect can be confirmed in the synergy maps and image-level synergy values (S) as 
+          well where we observe a high synergy for "bat" with "baseball" compared to other words such as "He" and "swung".
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="assets/images/homonym_result.png" alt="Homonyms Result"/>
+        <h2 class="subtitle has-text-centered">
+          Homonyms. Left: Successful generation of homonym "bowl" in different contexts due to high synergy with modifiers "bowl" 
+          and "game". Right: Failure case where the model generates the homonym "mole" with the same semantic meaning, the animal, 
+          due to its failure to use contextual information from words like "coworker" as can be seen in the synergy map.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="assets/images/synonym_result.png" alt="Synonyms Results"/>
+        <h2 class="subtitle has-text-centered">
+          Synonyms. Our redundancy map is able to highlight that the model considers the pairs "bed" and "mattress" (left) and "cube" 
+          and "cuboid" (right) as semantically similar
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="assets/images/hypo_result_coco.png" alt="Co-Hyponyms Results"/>
+      <h2 class="subtitle has-text-centered">
+        COCO Co-Hyponyms. The redundancy map proves to be very useful in finding out the reason behind the model’s failures in these figures. 
+        It confuses the co-hyponym pairs ("sandwich", "pizza")(left) and ("elephant", "cat")(right) to have the same meaning for the co-hyponyms 
+        as seen from the redundancy maps, which results in erroneous generations
+      </h2>
+    </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="assets/images/p_intervention_r1.png" alt="Prompt Intervention Results"/>
+      <h2 class="subtitle has-text-centered">
+        Prompt Intervention. The redundancy is highly activated in the face region of the giraffe. On a closer look, we see that the face is that 
+        of a cow meaning that the word "cow" is redundant. This is confirmed as the image changes very little on omitting it from the prompt.
+      </h2>
+    </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="assets/images/uniqueness_mrf_new.png" alt="Uniqueness Results"/>
+      <h2 class="subtitle has-text-centered">
+        Most Representative Features. Left: The "toothbrush" uniqueness map correctly captures the toothbrush bristles, their most distinct feature. 
+        Right: The "bear" uniqueness map correctly captures the bear region, specifically the face.
+      </h2>
+    </div>
+  </div>
+</div>
+</div>
+</section>
+<!-- End image carousel -->
+
+
+
+
+
+
+<!--BibTex citation -->
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>
+        @article{diffusionpid,
+          title={StableSemantics: A Synthetic Language-Vision Dataset of Semantic Representations in Naturalistic Images},
+          author={Shaurya Dewan* and Rushikesh Zawar* and Prakanshul Saxena* and Yingshan Chang and Andrew F. Luo and Yonatan Bisk},
+          journal={Conference on Neural Information Processing Systems (NeurIPS)}
+          year={2024},
+          url={https://rbz-99.github.io/Diffusion-PID/}
+        }
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This template was borrowed from <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> 
+            project page under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
